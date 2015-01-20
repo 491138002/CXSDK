@@ -1,0 +1,334 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#89000000"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/rl_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="#000000"
+        android:visibility="gone" >
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/i_bak_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/ssdk_back_arr" />
+
+            <Button
+                android:id="@+id/wv_back"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:background="#00000000"
+                android:paddingLeft="20dp"
+                android:paddingRight="10dp"
+                android:text="返回"
+                android:textColor="@android:color/white" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="新浪登录"
+            android:textColor="@android:color/white" />
+        
+       <Button
+                android:id="@+id/reload"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:background="#00000000"
+                android:paddingLeft="20dp"
+                android:paddingRight="10dp"
+                android:text="刷新"
+                android:textColor="@android:color/white" />
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/wv_xinlang"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/changxiangyouxi" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp" >
+
+                <LinearLayout
+                    android:id="@+id/ll_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:background="@drawable/toumingduantiao" >
+
+                        <ImageView
+                            android:id="@+id/bx_home_account_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/zhanghao" />
+
+                        <ImageView
+                            android:id="@+id/line"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@id/bx_home_account_label"
+                            android:background="@drawable/fengexianx" />
+
+                        <TextView
+                            android:id="@+id/bx_home_account"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toLeftOf="@id/bx_home_select_account"
+                            android:layout_toRightOf="@id/line"
+                            android:background="#00000000"
+                            android:gravity="center_vertical"
+                            android:inputType="textEmailAddress"
+                            android:singleLine="true"
+                            android:textAppearance="@android:style/TextAppearance.Small"
+                            android:textColor="#FFFFFF" />
+
+                        <EditText
+                            android:id="@+id/bx_home_account_text"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toLeftOf="@id/bx_home_select_account"
+                            android:layout_toRightOf="@id/line"
+                            android:background="#00000000"
+                            android:gravity="center_vertical"
+                            android:hint="@string/bx_home_user_name_hint"
+                            android:inputType="textEmailAddress"
+                            android:singleLine="true"
+                            android:textAppearance="@android:style/TextAppearance.Small"
+                            android:textColor="#FFFFFF"
+                            android:visibility="invisible" />
+
+                        <ImageView
+                            android:id="@+id/bx_home_select_account"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/cx_pull_down_arrow_selector" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center" >
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/toumingduantiao" >
+
+                        <ImageView
+                            android:id="@+id/bx_home_password_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/mima"
+                            android:gravity="center_vertical" />
+
+                        <ImageView
+                            android:id="@+id/line2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@id/bx_home_password_label"
+                            android:background="@drawable/fengexianx" />
+
+                        <TextView
+                            android:id="@+id/bx_home_password"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_toRightOf="@id/line2"
+                            android:background="#00000000"
+                            android:inputType="textPassword"
+                            android:singleLine="true"
+                            android:textAppearance="@android:style/TextAppearance.Small"
+                            android:textColor="#FFFFFF" />
+
+                        <EditText
+                            android:id="@+id/bx_home_password_text"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_toRightOf="@id/line2"
+                            android:background="#00000000"
+                            android:hint="@string/bx_home_pwd_hint"
+                            android:inputType="textPassword"
+                            android:singleLine="true"
+                            android:textAppearance="@android:style/TextAppearance.Small"
+                            android:textColor="#FFFFFF"
+                            android:visibility="invisible" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:orientation="horizontal" >
+
+                        <Button
+                            android:id="@+id/bx_home_login"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/cx_btn_selector_1"
+                            android:gravity="center"
+                            android:text="登陆游戏"
+                            android:textColor="@android:color/black" />
+
+                        <Button
+                            android:id="@+id/bx_home_register"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/cx_btn_selector_3"
+                            android:gravity="center"
+                            android:text="游客登录"
+                            android:textColor="@android:color/black" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/cx_home_register"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/cx_btn_selector_2"
+                        android:gravity="center"
+                        android:text="注册"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center" >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cx_home_other_login"
+                            android:textAppearance="@android:style/TextAppearance.Small"
+                            android:textColor="@android:color/white" />
+
+                        <Button
+                            android:id="@+id/bx_home_other_xinlang"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:background="@drawable/weibo" />
+
+                        <Button
+                            android:id="@+id/bx_home_other_qq"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/qq"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <WebView
+                        android:id="@+id/bx_webview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:gravity="right"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/bx_home_find_password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="忘记密码？"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,101 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="2dp" >
+	
+    <RelativeLayout
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:orientation="vertical"
+    	
+    >
+        <RelativeLayout
+            android:id="@+id/bx_transaction_top_layout"
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:padding="10dp"
+        	android:background="@drawable/bx_transaction_item_bg"
+        >
+            <TextView
+            	android:id="@+id/bx_transaction_name_tv"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:textSize="16sp"
+            	android:layout_marginBottom="10dp"
+            />
+            
+            <!-- <TextView
+            	android:id="@+id/bx_transaction_status_tv"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:text="成功"
+            	android:textSize="16sp"
+            	android:layout_alignParentRight="true"
+            />
+            
+            <TextView
+            	android:id="@+id/bx_transaction_price_tv"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:text="充值卡支付 6 元"
+            	android:layout_below="@+id/bx_transaction_name_tv"
+            />
+            
+            <TextView
+            	android:id="@+id/bx_transaction_date_tv"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:text="2013:12:12 22:22"
+            	android:layout_alignParentRight="true"
+            	android:layout_below="@+id/bx_transaction_name_tv"
+            /> -->
+        </RelativeLayout>
+        
+        <RelativeLayout
+       		android:id="@+id/bx_transaction_bottom_layout"
+       		android:layout_height="wrap_content"
+       		android:layout_width="wrap_content"
+       		android:paddingBottom="10dp"
+       		android:layout_below="@+id/bx_transaction_top_layout"
+       		android:visibility="gone"
+       		android:background="@drawable/bx_transaction_item_bg"
+       	>
+            <!-- <ImageView
+                android:id="@+id/bx_line"
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content"
+            	android:background="@drawable/bx_dashedline"
+            	android:layout_marginBottom="10dp"
+            	android:layout_marginLeft="5dp"
+            	android:layout_marginRight="5dp"
+            />
+            
+            <TextView
+            	android:id="@+id/bx_transaction_order_number_tv"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:text="订单号：1010101010101010"
+            	android:layout_below="@+id/bx_line"
+            	android:layout_marginLeft="10dp"
+            /> -->
+            
+            <TextView
+            	android:id="@+id/bx_transaction_order_desc_tv"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_marginLeft="10dp"
+            />
+        </RelativeLayout>
+        
+        <Button
+        	android:id="@+id/bx_transaction_show_btn"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:background="@drawable/bx_pop_show"
+        	android:layout_centerHorizontal="true"
+        	android:layout_alignParentBottom="true"
+        />
+    </RelativeLayout>
+    
+</LinearLayout>

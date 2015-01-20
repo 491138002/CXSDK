@@ -1,0 +1,167 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFFFF"
+    android:orientation="vertical" >
+
+    <include layout="@layout/cx_pay_title" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <include layout="@layout/cx_pay_account" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/bx_pay_payment"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:textColor="#727272" />
+
+            <LinearLayout
+                android:id="@+id/bx_pay_grid"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#9B9B9B"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="2dp"
+                        android:background="@drawable/bx_tip_persion" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="2dp"
+                        android:text="@string/bx_pay_tip_title"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="18sp"
+                         />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" 
+            >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="6dp"
+                        android:background="@drawable/bx_tip_point" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:text="@string/bx_pay_tip1"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="16sp"
+                         />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                     >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                         android:layout_marginTop="4dp"   
+                        android:background="@drawable/bx_tip_point" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                         android:layout_marginLeft="6dp"
+                        android:text="@string/bx_pay_tip2"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="16sp"
+                         />
+                </LinearLayout>
+
+<!--                 <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="6dp"
+                        android:background="@drawable/tip_point" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="6dp"
+                        android:text="@string/bx_pay_tip3"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="16sp"
+                         />
+                </LinearLayout> -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                     >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bx_tip_point" 
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginTop="4dp"/>
+
+                    <TextView
+                        android:id="@+id/bx_pay_about"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:autoLink="phone"
+                        android:layout_marginLeft="6dp"
+                        android:text="@string/bx_pay_tip4"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="16sp"
+                         />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="bx_custom_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint" tools:ignore="NewApi">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowIsFloating">true</item>是否悬浮在activity上       
+         <item name="android:windowFrame">@null</item> 边框        
+         <item name="android:windowContentOverlay">@null</item>对话框是否有遮盖      
+        <item name="android:backgroundDimEnabled">true</item> 模糊
+        <item name="android:backgroundDimAmount">0.8</item> 灰度 
+    </style>
+
+    <style name="bx_alipay_alert_dialog" parent="android:Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/bx_alipay_popup_bg</item>
+    </style>
+
+    <style name="AnimationPreview">
+        <item name="android:windowEnterAnimation">@anim/scale_in</item>
+        <item name="android:windowExitAnimation">@anim/scale_out</item>
+    </style>
+
+
+</resources>

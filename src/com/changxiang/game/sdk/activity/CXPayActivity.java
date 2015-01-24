@@ -203,7 +203,7 @@ public class CXPayActivity extends CXBaseActivity {
 			if (retType == OperateType.PAY) {
 				switch (retCode) {
 				case CXSDKStatusCode.SUCCESS:
-					if (CXGameConfig.PAYCALLBACK_LISTENER != null) {
+					if (CXGameConfig.PAYCALLBACK_LISTENER != null) { 
 						if (CXGameConfig.isSMSCallBack) {
 							CXGameConfig.PAYCALLBACK_LISTENER.callback(
 									CXSDKStatusCode.SUCCESS,
@@ -687,6 +687,9 @@ public class CXPayActivity extends CXBaseActivity {
 		case CXSDKStatusCode.CODE_PASSOWRD_ERROR:
 			content = "充值失败,充值卡信息有误";
 			break;
+		case CXSDKStatusCode.SMS_PRICE_ERROR:
+			content = "此商品禁止使用短信支付";
+			break;
 		default:
 			content = "充值失败";
 			break;
@@ -1012,12 +1015,10 @@ public class CXPayActivity extends CXBaseActivity {
 					break;
 				case PAY_BY_UP_KEY:
 					result = ParseUtil.getPayResult(resultJson);
-					if (result != null
-							&& StringUtil.isNotEmpty(result.getOrderId())) {
+					if (result != null&& result.getCode()==SUCCESS&&StringUtil.isNotEmpty(result.getOrderId())) {
 						String serverMode = "00";
 						// int ret = UPPayAssistEx.startPay(context, "", "",
 						// result.getTn(), serverMode);
-
 						UPPayAssistEx.startPayByJAR(context, PayActivity.class,
 								null, null, result.getTn(), serverMode);
 						// if (ret == UPPayAssistEx.PLUGIN_NOT_FOUND) {
@@ -1026,8 +1027,10 @@ public class CXPayActivity extends CXBaseActivity {
 						// isInstall = UPPayAssistEx
 						// .installUPPayPlugin(context);
 						// }
-					} else {
-						showToast("支付失败");
+					} else if (result.getCode()==CXSDKStatusCode.SMS_PRICE_ERROR) {
+						getPayEndView(CXSDKStatusCode.SMS_PRICE_ERROR);
+					}else {
+						getPayEndView(CXSDKStatusCode.PAY_ERROR);
 					}
 					break;
 				case PAY_BY_RESULT_QUERY:
@@ -1098,8 +1101,10 @@ public class CXPayActivity extends CXBaseActivity {
 							aliMgr.init();
 
 						}
-					} else {
-						showToast("支付失败");
+					}else if (result.getCode()==CXSDKStatusCode.SMS_PRICE_ERROR) {
+						getPayEndView(CXSDKStatusCode.SMS_PRICE_ERROR);
+					}else {
+						getPayEndView(CXSDKStatusCode.PAY_ERROR);
 					}
 					break;
 					
@@ -1122,7 +1127,6 @@ public class CXPayActivity extends CXBaseActivity {
 						dataMap.put("cpDefine",result.getOrderId());
 
 						
-						System.out.println("==="+dataMap.toString());
 						Payment.pay(context, dataMap, new PaymentListener() {
 							@Override
 							public void paymentResult(int resultCode, String resultStr) {
@@ -1157,7 +1161,9 @@ public class CXPayActivity extends CXBaseActivity {
 								}
 							}
 						});
-					} else {
+					} else if (result.getCode()==CXSDKStatusCode.SMS_PRICE_ERROR) {
+						getPayEndView(CXSDKStatusCode.SMS_PRICE_ERROR);
+					}else {
 						getPayEndView(CXSDKStatusCode.PAY_ERROR);
 					}
 					break;

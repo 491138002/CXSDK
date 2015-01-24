@@ -87,4 +87,7 @@ public class CXSDKStatusCode {
 	public static final int SINA_ACCESS_TOKEN_PAST_DUE = 20012;
 	// 应用名错误
 	public static final int APP_NAME_ERROR = 20013;
+	
+	//金额大于30不能用短信支付
+	public static final int SMS_PRICE_ERROR = -9999;
 }

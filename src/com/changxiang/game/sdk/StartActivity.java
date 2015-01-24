@@ -29,7 +29,7 @@ public class StartActivity extends Activity {
 			LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT);
 	private Context context = this;
 
-	private double money = 0.01;
+	private int money = 31;
 
 	
 	@Override

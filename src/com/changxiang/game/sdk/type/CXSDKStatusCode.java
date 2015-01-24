@@ -89,5 +89,5 @@ public class CXSDKStatusCode {
 	public static final int APP_NAME_ERROR = 20013;
 	
 	//金额大于30不能用短信支付
-	public static final int SMS_PRICE_ERROR = -9999;
+	public static final int PRICE_ERROR = -9999;
 }

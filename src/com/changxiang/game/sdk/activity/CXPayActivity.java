@@ -687,9 +687,6 @@ public class CXPayActivity extends CXBaseActivity {
 		case CXSDKStatusCode.CODE_PASSOWRD_ERROR:
 			content = "充值失败,充值卡信息有误";
 			break;
-		case CXSDKStatusCode.SMS_PRICE_ERROR:
-			content = "此商品禁止使用短信支付";
-			break;
 		default:
 			content = "充值失败";
 			break;
@@ -994,7 +991,13 @@ public class CXPayActivity extends CXBaseActivity {
 						if (result.getCode() == 1) {
 							getPayEndView(CXSDKStatusCode.SUCCESS);
 							payResult(OperateType.PAY, CXSDKStatusCode.SUCCESS);
-						} else {
+						} else if(result.getCode()==CXSDKStatusCode.PRICE_ERROR){
+							BXDialogUtil.showDialog(context, "提示",result.getMsg(), "确定", null,
+									new OnAlertSelectId() {
+										public void onClick(int whichButton, Object o) {
+										}
+									}).show();
+						}else {
 							getPayEndView(result.getCode());
 						}
 					} else {
@@ -1006,7 +1009,13 @@ public class CXPayActivity extends CXBaseActivity {
 					if (result != null) {
 						if (result.getCode() == 1) {
 							orderInquiry(result.getOrderId());
-						} else {
+						}else if(result.getCode()==CXSDKStatusCode.PRICE_ERROR){
+							BXDialogUtil.showDialog(context, "提示",result.getMsg(), "确定", null,
+									new OnAlertSelectId() {
+										public void onClick(int whichButton, Object o) {
+										}
+									}).show();
+						}else {
 							getPayEndView(result.getCode());
 						}
 					} else {
@@ -1027,18 +1036,28 @@ public class CXPayActivity extends CXBaseActivity {
 						// isInstall = UPPayAssistEx
 						// .installUPPayPlugin(context);
 						// }
-					} else if (result.getCode()==CXSDKStatusCode.SMS_PRICE_ERROR) {
-						getPayEndView(CXSDKStatusCode.SMS_PRICE_ERROR);
+					} else if (result.getCode()==CXSDKStatusCode.PRICE_ERROR) {
+						BXDialogUtil.showDialog(context, "提示",result.getMsg(), "确定", null,
+								new OnAlertSelectId() {
+									public void onClick(int whichButton, Object o) {
+									}
+								}).show();
 					}else {
 						getPayEndView(CXSDKStatusCode.PAY_ERROR);
 					}
 					break;
 				case PAY_BY_RESULT_QUERY:
 					result = ParseUtil.getPayResultQuery(resultJson);
-					if (result != null) {
+					if (result != null&&result.getCode()==SUCCESS) {
 						beginQuery(result.getCode());
 
-					} else {
+					} else if(result.getCode()==CXSDKStatusCode.PRICE_ERROR){
+						BXDialogUtil.showDialog(context, "提示",result.getMsg(), "确定", null,
+								new OnAlertSelectId() {
+									public void onClick(int whichButton, Object o) {
+									}
+								}).show();
+					}else {
 						getPayEndView(CXSDKStatusCode.PAY_ERROR);
 					}
 					break;
@@ -1101,8 +1120,12 @@ public class CXPayActivity extends CXBaseActivity {
 							aliMgr.init();
 
 						}
-					}else if (result.getCode()==CXSDKStatusCode.SMS_PRICE_ERROR) {
-						getPayEndView(CXSDKStatusCode.SMS_PRICE_ERROR);
+					}else if (result.getCode()==CXSDKStatusCode.PRICE_ERROR) {
+						BXDialogUtil.showDialog(context, "提示",result.getMsg(), "确定", null,
+								new OnAlertSelectId() {
+									public void onClick(int whichButton, Object o) {
+									}
+								}).show();
 					}else {
 						getPayEndView(CXSDKStatusCode.PAY_ERROR);
 					}
@@ -1161,8 +1184,13 @@ public class CXPayActivity extends CXBaseActivity {
 								}
 							}
 						});
-					} else if (result.getCode()==CXSDKStatusCode.SMS_PRICE_ERROR) {
-						getPayEndView(CXSDKStatusCode.SMS_PRICE_ERROR);
+					} else if (result.getCode()==CXSDKStatusCode.PRICE_ERROR) {
+						
+						BXDialogUtil.showDialog(context, "提示",result.getMsg(), "确定", null,
+								new OnAlertSelectId() {
+									public void onClick(int whichButton, Object o) {
+									}
+								}).show();
 					}else {
 						getPayEndView(CXSDKStatusCode.PAY_ERROR);
 					}

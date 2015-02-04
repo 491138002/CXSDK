@@ -202,7 +202,7 @@ public class AlixManager {
 	Handler mHandler = new Handler() {
 		public void handleMessage(android.os.Message msg) {
 			Result result = new Result((String) msg.obj);
-			result.parseResult(PUBLIC);
+			result.parseResult();
 			switch (msg.what) {
 			case RQF_PAY:
 				// 处理交易结果

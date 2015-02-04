@@ -55,7 +55,7 @@ public class CXGameSDK {
 			if (appInfo.metaData!=null) {
 				
 				channel = appInfo.metaData.getString("UMENG_CHANNEL");
-				System.out.println("UMENG_CHANNEL=="+channel);
+//				System.out.println("UMENG_CHANNEL=="+channel);
 				if (StringUtil.isNotEmpty(channel)) {
 					CXGameConfig.CHANNEL_ID=channel;
 				}

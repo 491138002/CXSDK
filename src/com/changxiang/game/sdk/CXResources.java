@@ -41,6 +41,7 @@ public class CXResources {
 	
 	public static final class drawable{
 		public static final int bx_btn_white_selector = Util.getResIdFromFileName(context, TYPE_DRAWABLE, "cx_btn_white_selector");
+		public static final int cx_commom_progressbar_bg = Util.getResIdFromFileName(context, TYPE_DRAWABLE, "cx_commom_progressbar_bg");
 		public static final int bx_header_game = Util.getResIdFromFileName(context, TYPE_DRAWABLE, "cx_btn_white_selector");
 		public static final int bx_header_bg = Util.getResIdFromFileName(context, TYPE_DRAWABLE, "cx_btn_white_selector");
 		public static final int bx_header_button_left_pressed = Util.getResIdFromFileName(context, TYPE_DRAWABLE, "bx_header_button_left_pressed");
@@ -110,6 +111,7 @@ public class CXResources {
 	
 	public static final class layout{
 		public static final int bx_main_activity = Util.getResIdFromFileName(context, TYPE_LAYOUT, "cx_main_activity");
+		public static final int cx_commom_loading = Util.getResIdFromFileName(context, TYPE_LAYOUT, "cx_commom_loading");
 		public static final int bx_home_panel = Util.getResIdFromFileName(context, TYPE_LAYOUT, "cx_home_panel");
 		public static final int bx_home_panel_vertical = Util.getResIdFromFileName(context, TYPE_LAYOUT, "cx_home_panel_vertical");
 		public static final int bx_quick_play = Util.getResIdFromFileName(context, TYPE_LAYOUT, "cx_quick_play");
@@ -150,6 +152,7 @@ public class CXResources {
 
 	public static final class id{
 		public static final int wv_xinlang = Util.getResIdFromFileName(context, TYPE_ID, "wv_xinlang");
+		public static final int tv_loading = Util.getResIdFromFileName(context, TYPE_ID, "tv_loading");
 		public static final int reload = Util.getResIdFromFileName(context, TYPE_ID, "reload");
 		public static final int wv_back = Util.getResIdFromFileName(context, TYPE_ID, "wv_back");
 		public static final int rl_layout = Util.getResIdFromFileName(context, TYPE_ID, "rl_layout");

@@ -22,6 +22,11 @@
         <item name="android:windowEnterAnimation">@anim/scale_in</item>
         <item name="android:windowExitAnimation">@anim/scale_out</item>
     </style>
-
+ <!-- 提示 -->
+    <style name="ProgressBarStyleLarge">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:indeterminateDrawable">@anim/progressbar</item>
+    </style>
 
 </resources>
